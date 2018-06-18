@@ -1,14 +1,14 @@
 import React from 'react';
+import Sticker from './Sticker';
 
 const Product = ({product}) => {
   return (
     <div className="product">
-      <h2>{product.name}</h2>
-      <h3>{product.caption}</h3>
-      <div className="sticker">
-        <img src={product.images[0]} alt={product.name} />
+      <Sticker product={product} />
+      <div className="cartControls">
+        <button>Add to Cart</button>
+        <button>Remove from Cart</button>
       </div>
-      <h3>Free shipping anywhere in the world!</h3>
     </div>
   );
 };
