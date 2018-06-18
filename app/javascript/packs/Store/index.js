@@ -13,7 +13,8 @@ class Store extends React.Component {
 
   addToCart = (sku) => {
     let cart = this.state.cart
-    cart.items[sku] = cart.items[sku] + 1 || 1
+    cart.items[sku.id] = cart.items[sku.id] + 1 || 1
+    cart.total += sku.price
     this.setState({cart})
   }
 
