@@ -1,21 +1,30 @@
-<div class="product">
-  <h2>Pack of 5 stickers for $5</h2>
-  <h3>Free shipping anywhere in the world!</h3>
-  <div class="sticker">
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/stickers.win/reactallthethings.png", alt: "React all the things") %>
-  </div>
-  <%= form_tag charges_path, class: "payment-form" do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p>
-            <%= flash[:error] %>
-          </p>
-        </div>
-        <% end %>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-description="Pack of 5 stickers" data-amount="500" data-locale="auto" data-label="Buy Now"></script>
+<%= javascript_pack_tag "App" %>
+  <!-- Putting data into data attr of a div, then parse data as JSON, then pass to APP which we can use to pass to the other components -->
+  <%= content_tag :div, 
+    id: 'store_data',
+    data: {products: @products} do %>
     <% end %>
-</div>
+
+      <div id="store"></div>
+
+      <div class="product">
+        <h2>Pack of 5 stickers for $5</h2>
+        <h3>Free shipping anywhere in the world!</h3>
+        <div class="sticker">
+          <%= image_tag("https://s3-us-west-2.amazonaws.com/stickers.win/reactallthethings.png", alt: "React all the things") %>
+        </div>
+        <%= form_tag charges_path, class: "payment-form" do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p>
+                  <%= flash[:error] %>
+                </p>
+              </div>
+              <% end %>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Pack of 5 stickers" data-amount="500" data-locale="auto" data-label="Buy Now"></script>
+          <% end %>
+      </div>

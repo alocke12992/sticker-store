@@ -13,6 +13,16 @@ a {
   margin: auto;
 }
 
+header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: dotted 1px #ccc;
+}
+
+.tagline {
+  font-family: "Courier New";
+}
+
 .sticker {
   border: solid 1px #333;
   width: 505px;
