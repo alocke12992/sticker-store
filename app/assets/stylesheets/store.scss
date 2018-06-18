@@ -3,6 +3,11 @@ body {
   color: #333;
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 .container {
   max-width: 600px;
   margin: auto;
@@ -15,4 +20,8 @@ body {
   img {
     border: solid 1px #ccc;
   }
+}
+
+.payment-form {
+  margin-top: 20px;
 }
