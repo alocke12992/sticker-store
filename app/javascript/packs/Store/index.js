@@ -1,13 +1,22 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import ProductList from './ProductList';
+import Cart from './Cart';
 
 class Store extends React.Component {
+  state = {
+    products: this.props.products,
+    cart: {
+      items: [],
+      total: 0
+    }
+  }
   render() {
+    const {cart, products} = this.state
     return (
-      <div>
-        {this.props.products.map(product => {
-          return (<h2>{product.name}</h2>)
-        })}
-      </div>
+      <Fragment>
+        <Cart cart={cart} />
+        <ProductList products={products} />
+      </Fragment>
     )
   }
 }
