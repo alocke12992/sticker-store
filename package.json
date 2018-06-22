@@ -3,10 +3,12 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-stripe-checkout": "^2.6.3"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
